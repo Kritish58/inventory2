@@ -16,7 +16,9 @@ app.use(express.json());
 app.use('/api/categories', categoreiesAPI);
 app.use('/api/items', itemsAPI);
 
-app.use(express.static(path.join(__dirname, 'client/build')));
-app.get('*', (req, res) => res.sendFile(path.resolve('client', 'build', 'index.html')));
+if (process.env.NODE_ENV === 'PRODUCTION') {
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.get('*', (req, res) => res.sendFile(path.resolve('client', 'build', 'index.html')));
+}
 
 module.exports = app;
