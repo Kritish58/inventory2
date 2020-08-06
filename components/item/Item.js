@@ -4,11 +4,11 @@ const { Schema } = mongoose;
 const Item = new Schema({
   name: {
     type: String,
-    minlength: [3, 'name should be at least 3 characters long'],
+    minlength: [2, 'name should be at least 3 characters long'],
     maxlength: [30, 'name should not be longer than 30 characters'],
     required: true,
   },
-  category: {
+  catId: {
     type: Schema.Types.ObjectId,
     ref: 'Category',
     requried: true,
@@ -24,6 +24,10 @@ const Item = new Schema({
     required: true,
     min: [0, 'the pcs cannot be smaller than 0'],
     max: [10000, 'the pcs cannot be larger than 10000'],
+  },
+  date: {
+    type: Date,
+    default: Date.now,
   },
 });
 

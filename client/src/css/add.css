@@ -1,0 +1,20 @@
+.add-fixed-buttons {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+.add-fixed-buttons .btn {
+  transition: padding 0.2s;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  color: #444;
+  box-shadow: none !important;
+}
+.add-fixed-buttons .btn:hover {
+  padding-left: 40px;
+}
+.add-fixed-buttons .btn:hover > i {
+  color: #222;
+}
