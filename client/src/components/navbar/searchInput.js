@@ -69,7 +69,7 @@ function SearchInput(props) {
         </div>
         <div>
           <Autocomplete
-            menuStyle={{ zIndex: 9, position: 'absolute', left: '3%' }}
+            menuStyle={{ zIndex: 9, position: 'absolute', left: '9.5%' }}
             inputProps={{
               placeholder: 'search',
               style: {
