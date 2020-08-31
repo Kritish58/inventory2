@@ -5,6 +5,7 @@ import './App.css';
 
 import Home from './pages/view';
 import Navbar from './components/navbar';
+import SmallNavbar from './components/smallNavbar';
 import Add from './pages/add';
 import Stats from './pages/stats';
 import Profile from './pages/profile';
@@ -51,6 +52,7 @@ function App(props) {
       {!!loader && <h4>Loading...</h4>}
       {!loader && !!categories.length && !!items.length && (
         <div>
+          {/* media query is used to select between the two */}
           <Navbar
             {...props}
             generateStructure={generateStructure}
@@ -58,45 +60,55 @@ function App(props) {
             categories={categories}
             setSearchInput={setSearchInput}
           />
-          <Switch>
-            <Route
-              exact
-              path="/"
-              component={(props) => (
-                <Home {...props} generateStructure={generateStructure} items={items} categories={categories} />
-              )}
-            />
-            <Route
-              path="/add"
-              component={(props) => (
-                <Add {...props} generateStructure={generateStructure} items={items} categories={categories} />
-              )}
-            />
-            <Route
-              path="/stats"
-              component={(props) => (
-                <Stats {...props} generateStructure={generateStructure} items={items} categories={categories} />
-              )}
-            />
-            <Route
-              path="/profile"
-              component={(props) => (
-                <Profile {...props} generateStructure={generateStructure} items={items} categories={categories} />
-              )}
-            />
-            <Route
-              path="/searchResults"
-              component={(props) => (
-                <SearchResult
-                  {...props}
-                  generateStructure={generateStructure}
-                  items={items}
-                  categories={categories}
-                  searchInput={searchInput}
-                />
-              )}
-            />
-          </Switch>
+          <SmallNavbar
+            {...props}
+            generateStructure={generateStructure}
+            items={items}
+            categories={categories}
+            setSearchInput={setSearchInput}
+          />
+
+          <div className="p-5">
+            <Switch>
+              <Route
+                exact
+                path="/"
+                component={(props) => (
+                  <Home {...props} generateStructure={generateStructure} items={items} categories={categories} />
+                )}
+              />
+              <Route
+                path="/add"
+                component={(props) => (
+                  <Add {...props} generateStructure={generateStructure} items={items} categories={categories} />
+                )}
+              />
+              <Route
+                path="/stats"
+                component={(props) => (
+                  <Stats {...props} generateStructure={generateStructure} items={items} categories={categories} />
+                )}
+              />
+              <Route
+                path="/profile"
+                component={(props) => (
+                  <Profile {...props} generateStructure={generateStructure} items={items} categories={categories} />
+                )}
+              />
+              <Route
+                path="/searchResults"
+                component={(props) => (
+                  <SearchResult
+                    {...props}
+                    generateStructure={generateStructure}
+                    items={items}
+                    categories={categories}
+                    searchInput={searchInput}
+                  />
+                )}
+              />
+            </Switch>
+          </div>
         </div>
       )}
 

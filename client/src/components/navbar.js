@@ -10,7 +10,7 @@ function Navbar(props) {
   const { setSearchInput } = props;
 
   return (
-    <div className="navbar-maincontainer py-2">
+    <div className="large-navbar navbar-maincontainer w-100 py-2" style={{ position: 'fixed', zIndex: 1000 }}>
       <div className="container">
         <div className="row align-items-center">
           {/*  */}

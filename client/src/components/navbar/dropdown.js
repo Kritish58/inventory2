@@ -5,7 +5,7 @@ function Dropdown(props) {
   return (
     <div className="dropdown">
       <span
-        className=" mx-1 text-light d-flex flex-column align-items-center"
+        className=" text-light d-flex flex-column align-items-center"
         id="dropdownMenu1"
         data-toggle="dropdown"
         aria-haspopup="true"

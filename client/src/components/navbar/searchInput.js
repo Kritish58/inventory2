@@ -57,6 +57,7 @@ function SearchInput(props) {
       <form className="d-flex align-items-center">
         <div>
           <button
+            type="submit"
             className="btn btn-sm btn-light mr-2"
             onClick={(e) => {
               e.preventDefault();
