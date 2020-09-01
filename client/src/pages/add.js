@@ -3,13 +3,15 @@ import Select from 'react-select';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import { isLoggedIn } from '../utils/authToken';
+
 import '../css/add.css';
 
-const options = [
-  { value: 'price', label: 'price' },
-  { value: 'pcs', label: 'pcs' },
-  { value: 'date', label: 'date' },
-];
+// const options = [
+//   { value: 'price', label: 'price' },
+//   { value: 'pcs', label: 'pcs' },
+//   { value: 'date', label: 'date' },
+// ];
 
 const PCSLIMIT = 10000;
 const PRICELIMIT = 500000;
@@ -53,6 +55,13 @@ function Add(props) {
   const [editCategoryClicked, setEditCategoryClicked] = useState(0);
   const [editItemClicked, setEditItemClicked] = useState(0);
   const [editCategoryId, setEditCategoryId] = useState(null);
+
+  useEffect(() => {
+    if (!isLoggedIn()) {
+      props.history.push('/login');
+      return;
+    }
+  }, []);
 
   useEffect(() => {
     console.log(editItemId);
@@ -155,6 +164,7 @@ function Add(props) {
         }
       });
       setLocalItems(stageItems);
+      axios.defaults.headers.common['authorization'] = localStorage.getItem('token');
       axios
         .post('/api/categories/deleteOne/' + catId)
         .then((res) => {

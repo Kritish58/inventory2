@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import ItemsView from '../components/view/itemsView';
 
+import { isLoggedIn } from '../utils/authToken';
+
 function SearchResult(props) {
   const { items, categories } = props;
   const { searchInput } = props;
@@ -10,6 +12,11 @@ function SearchResult(props) {
   const [localCats, setLocalCats] = useState([]);
 
   useEffect(() => {
+    if (!isLoggedIn()) {
+      props.history.push('/login');
+      return;
+    }
+
     const stageItems = items.filter((item) => {
       if (item.name.toLowerCase().includes(searchInput.toLowerCase())) {
         return item;

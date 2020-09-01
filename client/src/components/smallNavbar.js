@@ -5,7 +5,6 @@ import Autocomplete from 'react-autocomplete';
 
 import '../css/navbar.css';
 import Dropdown from './navbar/dropdown';
-import SearchInput from './navbar/searchInput';
 
 function Navbar(props) {
   const { categories, items, generateStructure } = props;

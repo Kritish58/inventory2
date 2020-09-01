@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Select from 'react-select';
 import _ from 'underscore';
+
+import { isLoggedIn } from '../utils/authToken';
 
 const sortOptions = [
   { value: 'price', label: 'price' },
@@ -8,6 +11,7 @@ const sortOptions = [
 ];
 
 function Stats(props) {
+  const { generateStructure } = props;
   const { categories, items } = props;
   const [localCategories, setLocalCategories] = useState([]);
 
@@ -108,6 +112,34 @@ function Stats(props) {
       return;
     }
   };
+
+  const handleDeleteCategory = (catId, catName) => {
+    const confirm = window.confirm(`delete category ${catName}? \n \n all items with this category will be deleted`);
+    if (confirm) {
+      axios.defaults.headers.common['authorization'] = localStorage.getItem('token');
+      axios
+        .post('/api/categories/deleteOne/' + catId)
+        .then((res) => {
+          if (res.data.success) {
+            generateStructure();
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      return;
+    }
+  };
+
+  useEffect(() => {
+    if (!isLoggedIn()) {
+      props.history.push('/login');
+      return;
+    }
+    // generateStructure();
+    return () => {};
+  }, []);
 
   useEffect(() => {
     setLocalCategories(categories);
@@ -255,7 +287,10 @@ function Stats(props) {
               <div className="d-flex align-items-center mb-2">
                 <h5 className="m-0 text-dark">{cat.name}</h5>
 
-                <button className="btn btn-sm btn-light ml-2 text-muted">
+                <button
+                  className="btn btn-sm btn-light ml-2 text-muted"
+                  onClick={() => handleDeleteCategory(cat._id, cat.name)}
+                >
                   <i className="fas fa-trash-alt"></i>
                 </button>
               </div>

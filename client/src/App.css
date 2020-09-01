@@ -63,3 +63,28 @@
   position: fixed;
   width: fit-content !important;
 }
+/* login and signup page deisgn */
+.login-container {
+  background-color: #05396b;
+  height: 100vh;
+  color: #eee;
+}
+.signup-container {
+  background-color: #05396b;
+  height: 100vh;
+  color: #eee;
+}
+.login-form {
+  width: 40%;
+}
+.signup-form {
+  width: 40%;
+}
+@media only screen and (max-width: 678px) {
+  .login-form {
+    width: 80%;
+  }
+  .signup-form {
+    width: 40%;
+  }
+}
