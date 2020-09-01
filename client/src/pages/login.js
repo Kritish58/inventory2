@@ -30,7 +30,6 @@ function Login(props) {
       .post('/api/users/login', { email, password })
       .then((res) => {
         setLoginLoader(0);
-        console.log(res);
         if (res.data.emailDoesNotExist) {
           setErrMsg('email does not exist');
           setTimeout(() => {

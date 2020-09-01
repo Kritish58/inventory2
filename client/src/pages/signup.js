@@ -32,7 +32,6 @@ function Signup(props) {
       .post('/api/users/signup', { email, password, key })
       .then((res) => {
         setSignupLoader(0);
-        console.log(res);
         if (res.data.invalidKey) {
           setErrMsg('invalid key, please try another');
           setTimeout(() => {

@@ -92,7 +92,6 @@ function Add(props) {
     axios
       .post('/api/categories/createOne', formData)
       .then((res) => {
-        console.log(res);
         setAddCategoryLoader(0);
         if (res.data.success) {
           setLocalCategories((prev) => {
@@ -141,7 +140,6 @@ function Add(props) {
       .post('/api/categories/editOne/' + editCategoryId, formData)
       .then((res) => {
         setAddCategoryLoader(0);
-        console.log(res);
       })
       .catch((err) => {
         setAddCategoryLoader(0);

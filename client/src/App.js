@@ -60,7 +60,6 @@ function App(props) {
         },
       })
       .then((res) => {
-        console.log(res);
         setLoader(0);
         if (res.data.success) {
           setCategories(res.data.categories);
