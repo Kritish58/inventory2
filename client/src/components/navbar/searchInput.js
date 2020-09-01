@@ -29,7 +29,6 @@ function SearchInput(props) {
   const [selectedSearchOption, setSelectedSearchOption] = useState('');
 
   useEffect(() => {
-    // console.log(categories);
     const modCategories = categories.map((cat) => {
       return {
         _id: cat._id,
@@ -51,7 +50,8 @@ function SearchInput(props) {
     const modAll = [...modCategories, ...modItems];
     setAllSearchOptions(modAll);
     return () => {};
-  }, []);
+  }, [categories, items]);
+
   return (
     <div className="mr-3">
       <form className="d-flex align-items-center">

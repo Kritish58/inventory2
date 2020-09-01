@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import '../css/navbar.css';
@@ -8,6 +8,11 @@ import SearchInput from './navbar/searchInput';
 function Navbar(props) {
   const { categories, items, generateStructure } = props;
   const { setSearchInput } = props;
+
+  // useEffect(() => {
+  //   console.log(categories, items);
+  //   return () => {};
+  // }, [categories, items]);
 
   return (
     <div className="large-navbar navbar-maincontainer w-100 py-2" style={{ position: 'fixed', zIndex: 1000 }}>

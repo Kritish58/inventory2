@@ -36,7 +36,7 @@ function Navbar(props) {
     setAllSearchOptions(modAll);
 
     return () => {};
-  }, []);
+  }, [categories, items]);
 
   return (
     <div className="small-navbar navbar-maincontainer w-100 py-2" style={{ position: 'fixed', zIndex: 1000 }}>
