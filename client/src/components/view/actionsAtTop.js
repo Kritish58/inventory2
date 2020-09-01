@@ -30,7 +30,7 @@ function ActionsAtTop(props) {
 
   return (
     <>
-      <div className="d-flex justify-content-between mb-2">
+      <div className="d-flex justify-content-between my-2">
         {/*  */}
 
         <div className="d-flex align-items-center">
