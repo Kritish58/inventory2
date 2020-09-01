@@ -46,6 +46,8 @@ function Signup() {
         if (res.data.success) {
           initState();
           setToken(res.data.token);
+          generateStructure();
+          props.history.push('/');
         }
       })
       .catch((err) => {
