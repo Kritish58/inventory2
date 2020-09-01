@@ -33,7 +33,8 @@ function ActionsAtTop(props) {
       <div className="d-flex justify-content-between my-2">
         {/*  */}
 
-        <div className="d-flex align-items-center">
+        <div className="d-flex flex-column">
+          <span className="d-block small">sort by</span>
           <Select
             className="view-sort-select"
             value={selectedSort}

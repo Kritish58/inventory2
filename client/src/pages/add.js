@@ -369,7 +369,7 @@ function Add(props) {
   };
 
   return (
-    <div className="py-3 pb-5 container bg-light">
+    <div className="py-3 pb-5 px-2 bg-light">
       <div className="add-fixed-buttons shadow rounded-right">
         <a className="btn rounded-0 text-muted" href="#add-category">
           <i className="fas fa-tree"></i>

@@ -17,7 +17,7 @@ function Dashboard(props) {
   }, []);
 
   return (
-    <div className="container my-2 p-2 bg-light">
+    <div className=" my-2 p-2">
       <ActionsAtTop setSortBy={setSortBy} setGroup={setGroup} />
 
       <div className="table-responsive" style={{ fontSize: '14px' }}>

@@ -45,8 +45,8 @@ function App(props) {
   }, []);
 
   useEffect(() => {
-    if (!isAuthPage) {
-      // props.history.push('/searchResults');
+    if (!isAuthPage && searchInput !== null && searchInput.length) {
+      props.history.push('/searchResults');
     }
     return () => {};
   }, [searchInput]);
@@ -73,7 +73,45 @@ function App(props) {
   };
   return (
     <div className="App">
-      {!!loader && <h4>Loading...</h4>}
+      {!!loader && (
+        <div
+          className="text-light"
+          style={{
+            position: 'fixed',
+            height: '100vh',
+            width: '100vw',
+            overflow: 'hidden',
+            zIndex: 1001,
+            backgroundColor: 'rgba(10,10,100,0.9)',
+          }}
+        >
+          <div
+            className="text-center"
+            style={{
+              width: 40,
+              height: 40,
+              borderWidth: 2,
+              position: 'relative',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-100%,-100%)',
+            }}
+          >
+            <span
+              style={{
+                width: 40,
+                height: 40,
+                borderWidth: 2,
+              }}
+              class="spinner-border"
+              role="status"
+            >
+              <span class="sr-only">Loading...</span>
+            </span>
+            <span className="d-block">loading...</span>
+          </div>
+        </div>
+      )}
       {!loader && (
         <div>
           {!isAuthPage && (

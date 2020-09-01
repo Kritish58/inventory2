@@ -91,6 +91,7 @@ function Navbar(props) {
                   style={{ height: 'fit-content', padding: '6px 8px', position: 'relative' }}
                   onClick={() => {
                     setSearchInput(input);
+                    setInput('');
                   }}
                 >
                   <i className="fas fa-search"></i>

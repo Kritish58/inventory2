@@ -62,6 +62,7 @@ function SearchInput(props) {
             onClick={(e) => {
               e.preventDefault();
               setSearchInput(input);
+              setInput('');
             }}
           >
             <i className="fas fa-search"></i>

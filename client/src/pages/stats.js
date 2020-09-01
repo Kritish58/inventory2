@@ -152,42 +152,30 @@ function Stats(props) {
   }, [categories]);
 
   return (
-    <div className="container bg-light py-2 pb-5">
-      <div className="row bg-white mx-2 my-3 py-2 rounded shadow-sm small font-weight-bold">
+    <div className=" bg-light py-2 pb-5">
+      <div className="row bg-white mx-2 my-3 py-2 rounded shadow-sm small">
         {/*  */}
 
         {/*  */}
         {/*  */}
         <div className="col-12 col-sm-6">
-          <div className="border my-2 p-3 bg-info text-light rounded">
-            <div className="row">
-              <div className="col">Category w/m Pcs</div>
+          <div className="border my-2 p-3 bg-light text-muted rounded">
+            <div className="row mb-2">
               <div className="col">
-                {catWithMostPcs && catWithMostPcs.name} ({catWithMostPcs && catWithMostPcs.localPcs}pcs)
+                <span className="text-dark">Category</span> w/m Pcs
+              </div>
+              <div className="col">
+                <span className="text-dark">{catWithMostPcs && catWithMostPcs.name}</span> (
+                {catWithMostPcs && catWithMostPcs.localPcs}pcs)
               </div>
             </div>
             <div className="row">
-              <div className="col">Category w/l Pcs</div>
               <div className="col">
-                {catWithLeastPcs && catWithLeastPcs.name} ({catWithLeastPcs && catWithLeastPcs.localPcs}pcs)
+                <span className="text-dark">Category</span> w/l Pcs
               </div>
-            </div>
-          </div>
-        </div>
-        {/*  */}
-        {/*  */}
-        <div className="col-12 col-sm-6">
-          <div className="border my-2 p-3 bg-info text-light rounded">
-            <div className="row">
-              <div className="col">Category w/m Price</div>
               <div className="col">
-                {catWithMostPrice && catWithMostPrice.name} (Rs.{catWithMostPrice && catWithMostPrice.localPrice}/-)
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">Category w/l Price</div>
-              <div className="col">
-                {catWithLeastPrice && catWithLeastPrice.name} (Rs.{catWithLeastPrice && catWithLeastPrice.localPrice}/-)
+                <span className="text-dark">{catWithLeastPcs && catWithLeastPcs.name}</span> (
+                {catWithLeastPcs && catWithLeastPcs.localPcs}pcs)
               </div>
             </div>
           </div>
@@ -195,38 +183,23 @@ function Stats(props) {
         {/*  */}
         {/*  */}
         <div className="col-12 col-sm-6">
-          <div className="border my-2 p-3 bg-info text-light rounded">
-            <div className="row">
-              <div className="col">Category w/m items</div>
+          <div className="border my-2 p-3 bg-light text-muted rounded">
+            <div className="row mb-2">
               <div className="col">
-                {catWithMostItems && catWithMostItems.name} ({catWithMostItems && catWithMostPrice.items.length} items)
+                <span className="text-dark">Category</span> w/m Price
+              </div>
+              <div className="col">
+                <span className="text-dark">{catWithMostPrice && catWithMostPrice.name}</span> (Rs.
+                {catWithMostPrice && catWithMostPrice.localPrice}/-)
               </div>
             </div>
             <div className="row">
-              <div className="col">Category w/l items</div>
               <div className="col">
-                {catWithLeastItems && catWithLeastItems.name} ({catWithLeastItems && catWithLeastItems.items.length}{' '}
-                items)
+                <span className="text-dark">Category</span> w/l Price
               </div>
-            </div>
-          </div>
-        </div>
-        {/*  */}
-        {/*  */}
-        <div className="col-12 col-sm-6">
-          <div className="border my-2 p-3 bg-info text-light rounded">
-            <div className="row">
-              <div className="col">Item w/m Pcs</div>
               <div className="col">
-                {itemWithMostPcs && itemWithMostPcs.name} ({itemWithMostPcs && itemWithMostPcs.pcs}pcs ,
-                {itemWithMostPcs && itemWithMostPcs.category})
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">Item w/l Pcs</div>
-              <div className="col">
-                {itemWithLeastPcs && itemWithLeastPcs.name} ({itemWithLeastPcs && itemWithLeastPcs.pcs}pcs ,
-                {itemWithLeastPcs && itemWithLeastPcs.category})
+                <span className="text-dark">{catWithLeastPrice && catWithLeastPrice.name}</span> (Rs.
+                {catWithLeastPrice && catWithLeastPrice.localPrice}/-)
               </div>
             </div>
           </div>
@@ -234,38 +207,99 @@ function Stats(props) {
         {/*  */}
         {/*  */}
         <div className="col-12 col-sm-6">
-          <div className="border my-2 p-3 bg-info text-light rounded">
-            <div className="row">
-              <div className="col">Item w/m Price</div>
+          <div className="border my-2 p-3 bg-light text-muted rounded">
+            <div className="row mb-2">
               <div className="col">
-                {itemWithMostPrice && itemWithMostPrice.name} (Rs.{itemWithMostPrice && itemWithMostPrice.price}/- ,
-                {itemWithMostPrice && itemWithMostPrice.category})
+                <span className="text-dark">Category</span> w/m items
+              </div>
+              <div className="col">
+                <span className="text-dark">{catWithMostItems && catWithMostItems.name}</span> (
+                {catWithMostItems && catWithMostPrice.items.length} items)
               </div>
             </div>
             <div className="row">
-              <div className="col">Item w/l Price</div>
+              <div className="col">
+                <span className="text-dark">Category</span> w/l items
+              </div>
+              <div className="col">
+                <span className="text-dark">{catWithLeastItems && catWithLeastItems.name}</span> (
+                {catWithLeastItems && catWithLeastItems.items.length} items)
+              </div>
+            </div>
+          </div>
+        </div>
+        {/*  */}
+        {/*  */}
+        <div className="col-12 col-sm-6">
+          <div className="border my-2 p-3 bg-light text-muted  rounded">
+            <div className="row mb-2">
+              <div className="col">
+                <span style={{ textDecoration: 'underline' }}>Item</span> w/m Pcs
+              </div>
+              <div className="col">
+                <span style={{ textDecoration: 'underline' }}>{itemWithMostPcs && itemWithMostPcs.name}</span> (
+                <span className="text-success font-weight-bold">{itemWithMostPcs && itemWithMostPcs.pcs}pcs ,</span>
+                <span className="text-dark">{itemWithMostPcs && itemWithMostPcs.category}</span>)
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <span style={{ textDecoration: 'underline' }}>Item</span> w/l Pcs
+              </div>
+              <div className="col">
+                <span style={{ textDecoration: 'underline' }}>{itemWithLeastPcs && itemWithLeastPcs.name}</span> ({' '}
+                <span className="text-success font-weight-bold">{itemWithLeastPcs && itemWithLeastPcs.pcs}pcs ,</span>
+                <span className="text-dark">{itemWithLeastPcs && itemWithLeastPcs.category}</span>)
+              </div>
+            </div>
+          </div>
+        </div>
+        {/*  */}
+        {/*  */}
+        <div className="col-12 col-sm-6">
+          <div className="border my-2 p-3 bg-light text-muted rounded">
+            <div className="row mb-2">
+              <div className="col">
+                <span style={{ textDecoration: 'underline' }}>Item</span> w/m Price
+              </div>
+              <div className="col">
+                <span style={{ textDecoration: 'underline' }}>{itemWithMostPrice && itemWithMostPrice.name}</span> (
+                <span className="text-success font-weight-bold">
+                  Rs.{itemWithMostPrice && itemWithMostPrice.price}/- ,
+                </span>
+                <span className="text-dark">{itemWithMostPrice && itemWithMostPrice.category}</span>)
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <span style={{ textDecoration: 'underline' }}>Item</span> w/l Price
+              </div>
               <div className="col">
                 {' '}
-                {itemWithLeastPrice && itemWithLeastPrice.name} (Rs.{itemWithLeastPrice && itemWithLeastPrice.price}/- ,
-                {itemWithLeastPrice && itemWithLeastPrice.category})
+                <span style={{ textDecoration: 'underline' }}>{itemWithLeastPrice && itemWithLeastPrice.name}</span> (
+                <span className="text-success font-weight-bold">
+                  Rs.
+                  {itemWithLeastPrice && itemWithLeastPrice.price}/- ,
+                </span>
+                <span className="text-dark">{itemWithLeastPrice && itemWithLeastPrice.category}</span>)
               </div>
             </div>
           </div>
         </div>
         {/*  */}
         <div className="col-12 col-sm-6">
-          <div className="border my-2 p-3 bg-info text-light rounded">
-            <div className="row ">
+          <div className="border my-2 p-3 bg-light text-muted rounded">
+            <div className="row  mb-2">
               <div className="col stat-head">Total Pcs</div>
               <div className="col stat-body">{totalPcs}pcs</div>
             </div>
-            <div className="row">
+            <div className="row mb-2">
               <div className="col">Total Price</div>
               <div className="col">Rs.{totalPrice}/-</div>
             </div>
-            <div className="row">
+            <div className="row mb-2">
               <div className="col">Total Categories</div>
-              <div className="col">{categories.length} cats</div>
+              <div className="col">{categories.length} categories</div>
             </div>
             <div className="row">
               <div className="col">Total Items</div>
