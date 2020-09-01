@@ -34,19 +34,19 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
       <div
-          className="text-light"
-          style="
-            position: fixed;
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden;
-            z-index: 1001;
-            background-color: rgba(10,10,100,0.9);
-          ""
-        >
-      <div
-        className="text-center"
+        className=""
         style="
+          position: fixed;
+          height: 100vh;
+          width: 100vw;
+          overflow: hidden;
+          z-index: 1001;
+          background-color: rgba(10, 10, 100, 0.9);
+          color: #eee;
+        "
+      >
+        <div
+          style="
               width: 40;
               height: 40;
               border-width: 2;
@@ -55,12 +55,12 @@
               left: 50%;
               transform:'translate(-100%,-100%)
             "
-      >
-        <span style="width: 40; height: 40; border-width: 2" class="spinner-border" role="status">
-          <span class="sr-only">Loading...</span>
-        </span>
-        <span className="d-block">loading...</span>
-      </div>
+        >
+          <span style="width: 40; height: 40; border-width: 2" class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </span>
+          <p>loading...</p>
+        </div>
       </div>
     </div>
     <!--
