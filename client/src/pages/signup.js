@@ -5,7 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import { setToken } from '../utils/authToken';
 
-function Signup() {
+function Signup(props) {
+  const { generateStructure } = props;
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [key, setKey] = useState('');
