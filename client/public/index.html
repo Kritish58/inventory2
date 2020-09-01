@@ -32,7 +32,25 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div
+        className="text-center"
+        style="
+              width: 40;
+              height: 40;
+              border-width: 2;
+              position: relative;
+              top: 50%;
+              left: 50%;
+              transform:'translate(-100%,-100%)
+            "
+      >
+        <span style="width: 40; height: 40; border-width: 2" class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </span>
+        <span className="d-block">loading...</span>
+      </div>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

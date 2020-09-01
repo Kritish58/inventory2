@@ -103,10 +103,10 @@ function App(props) {
                 height: 40,
                 borderWidth: 2,
               }}
-              class="spinner-border"
+              className="spinner-border"
               role="status"
             >
-              <span class="sr-only">Loading...</span>
+              <span className="sr-only">Loading...</span>
             </span>
             <span className="d-block">loading...</span>
           </div>
