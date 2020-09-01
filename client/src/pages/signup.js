@@ -64,16 +64,18 @@ function Signup(props) {
         <div>
           <p className="display-4 text-center">Sign up</p>
         </div>
-        {!!errMsg.length && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="alert alert-warning small"
-          >
-            {errMsg}
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {!!errMsg.length && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="alert alert-warning small"
+            >
+              {errMsg}
+            </motion.div>
+          )}
+        </AnimatePresence>
         <div className="my-2">
           <label htmlFor="email" className="small">
             Email
